@@ -22,11 +22,12 @@ This project proposes an **active, wearable tremor suppression orthosis** that u
 
 | Component | Purpose | Qty |
 |----------|--------|-----|
-| EduExo frame | Wearable structure | 1 |
-| Stepper motor | Actuation | 1 |
+| EduExo kit | Kit with starting components | 1 |
+| Stepper motor (included in kit) | Actuation | 1 |
 | IMU (MPU6050) | Motion sensing | 2 |
 | Arduino Micro | Control & processing | 1 |
 | Haptic actuator | User feedback | 1 |
+| Driver (DRV2605L) | Actuation of Haptic Actuator | 1 |
 | Potentiometer | Sensitivity tuning | 1 |
 | Power supply | System power | 1 |
 | Wiring & connectors | Integration | - |
