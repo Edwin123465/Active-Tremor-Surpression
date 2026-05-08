@@ -1,11 +1,10 @@
-# Active-Tremor-Surpression
-Description comes later 
 # Active Tremor Suppression Orthosis  
 
 **Authors:** Samu Boving & Edwin Arnalsteen  
 **Course:** Haptic Interfaces Experience – KU Leuven  
 **Professor:** Carlos Rodriguez-Guerrero  
-
+## Description
+see later
 ---
 
 ## 🩺 Introduction  
