@@ -1,4 +1,4 @@
-# Active Tremor Suppression Orthosis  
+# Active Tremor Suppression  
 
 **Authors:** Samu Boving & Edwin Arnalsteen  
 **Course:** Haptic Interfaces Experience – KU Leuven  
@@ -7,17 +7,13 @@
 see later
 ---
 
-## 🩺 Introduction  
+## Introduction  
 
-Pathological tremor, including Parkinson’s disease tremor (4–6 Hz), essential tremor (6–12 Hz), and cerebellar tremor (2–4 Hz), affects millions of people worldwide and significantly impairs daily activities such as eating, writing, and self-care.  
-
-Current treatments are often insufficient. Pharmacological approaches provide limited relief, while existing wearable devices either rely on passive damping or electrical stimulation, which may cause discomfort and muscle fatigue over time.  
-
-This project proposes an **active, wearable tremor suppression orthosis** that uses mechanical counter-force instead of electrical stimulation. By combining real-time sensing, control, and haptic feedback, the system aims to provide a more adaptive and user-friendly solution.  
-
+ Word document into wordt hier geplakt. 
 ---
 
-## 🧰 Supplies (Bill of Materials)  
+## Supplies (Bill of Materials)  
++ zie word document
 
 | Component | Purpose | Qty |
 |----------|--------|-----|
@@ -33,44 +29,21 @@ This project proposes an **active, wearable tremor suppression orthosis** that u
 
 ---
 
-## ⚙️ Methods  
+## Methods  
 
-### Step 1: Sensing  
-Two IMUs are mounted on the forearm and hand to capture relative motion. These sensors provide 6-DOF data (acceleration + angular velocity), which is transmitted to the Arduino via I2C.
-
-### Step 2: Signal Processing  
-The Arduino performs real-time filtering and frequency analysis to distinguish pathological tremor from voluntary movement. The dominant tremor frequency is extracted.
-
-### Step 3: Control Strategy  
-Based on the detected tremor, a control algorithm determines the required counteracting force. The system operates in a closed-loop configuration.
-
-### Step 4: Actuation  
-A stepper motor generates a mechanical counter-force that is applied to the wrist through the orthosis structure, reducing tremor amplitude.
-
-### Step 5: User Interface  
-- A potentiometer allows real-time tuning of system sensitivity  
-- A haptic actuator provides tactile feedback on suppression level  
-
-### Step 6: System Integration  
-All components are integrated into a compact wearable setup. Power management, wiring, and mechanical stability were key design considerations.
+Word sectie wordt hier geplakt. 
 
 ---
 
-## 🧪 System Architecture  
+## System Architecture  
 
-**Sensing Layer:** Dual IMUs measure motion  
-**Processing Layer:** Arduino performs filtering and control  
-**Actuation Layer:** Stepper motor generates counter-force  
-**Feedback Layer:** Haptic actuator + user control input  
-**Monitoring:** Optional data streaming to PC  
-
-*(Add a diagram here!)*  
+Word sectie wordt hier geplakt.
 
 ---
 
-## 📊 Results & Discussion  
+## Results & Discussion  
 
-The prototype demonstrates the feasibility of active tremor suppression using mechanical counter-force.  
+Word sectie wordt hier geplakt. 
 
 Key observations:  
 - Effective reduction of tremor amplitude at specific frequencies  
@@ -84,30 +57,23 @@ Limitations:
 
 ---
 
-## 🧾 Conclusion & Future Work  
-
-This project presents a functional prototype of an active tremor suppression orthosis using real-time sensing and mechanical actuation.  
-
-Future improvements include:  
-- More advanced control algorithms (adaptive / predictive)  
-- Higher-performance actuators  
-- Miniaturization of electronics  
-- Clinical validation with users  
+## Conclusion & Future Work  
 
 ---
 
-## 📚 References  
+## References  
 
-[1] 
-[2]  
-[3] 
+Word sectie wordt hier geplakt.
 
 ---
 
-## 🎥 Demo Video  
+## Demo Video  
 
-*(Insert YouTube link here)*  
+To make this project accessible to a broader audience, an engaging introductory video was also created. It can be viewed at the following link:
+
+https://youtu.be/Gh2rGeSugKo
+
 
 ---
 
-## 📂 Repository Structure  
+## Repository Structure  
