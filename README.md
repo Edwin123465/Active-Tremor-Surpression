@@ -71,8 +71,7 @@ Word sectie wordt hier geplakt.
 
 To make this project accessible to a broader audience, an engaging introductory video was also created. It can be viewed at the following link:
 
-https://youtu.be/Gh2rGeSugKo
-
+https://youtu.be/2Iga29aqnwY
 
 ---
 
