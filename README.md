@@ -118,11 +118,7 @@ The table below provides an overview of the materials and components required fo
 
 Word sectie wordt hier geplakt. 
 
----
 
-## System Architecture  
-
-Word sectie wordt hier geplakt.
 
 ---
 
