@@ -23,6 +23,7 @@ The table below provides an overview of the materials and components required fo
   </figcaption>
 </figure>
 <br><br>
+<br><br>
 
 | Component | Purpose | Qty | Estimated Price | Link |
 |---|---|---|---|---|
