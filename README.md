@@ -16,7 +16,7 @@ see later
 + zie word document
 
 | Component | Purpose | Qty | Estimated Price | Link to component |
-|----------|--------|-----|--------|----------------|
+|----------|------------|-----|----------------|-----------------------|
 | EduExo Lite kit [10] | Kit with starting components | 1 |± €490 (with home delivery) | https://www.auxivo.com/product-page/eduexo-2-0 |
 | Stepper motor (included in kit) | Actuation | 1 | see EduExo | see EduExo |
 | IMU (MPU6050) [11] | Motion sensing | 2 | ± €11 (for 1) | https://www.adafruit.com/product/3886?srsltid=AfmBOopi52_3H75We1gVmOPYUL7RszCZK4pmTF51Z8X8BVHbOdBLdZCp |
