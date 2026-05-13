@@ -11,6 +11,7 @@ see later
 
  Word document into wordt hier geplakt. 
 ---
+## Supplies (Bill of Materials)
 
 The table below provides an overview of the materials and components required for this project. The primary component is the EduExo Lite kit, which already includes several sensors and other essential components. Where possible, a link to the exact component has been included, or alternatively, to a suitable substitute when the exact component could not be identified online. Some prices listed in the table were converted from foreign currencies to euros using the exchange rates applicable at the beginning of May 2026. Figure 6 presents all components included in the EduExo Lite kit.
 
