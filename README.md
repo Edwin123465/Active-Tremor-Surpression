@@ -22,7 +22,7 @@ The table below provides an overview of the materials and components required fo
     <b>Figure 6:</b> Overview of components included in the EduExo Lite kit [10]
   </figcaption>
 </figure>
-
+<br><br>
 
 | Component | Purpose | Qty | Estimated Price | Link |
 |---|---|---|---|---|
