@@ -16,7 +16,10 @@ see later
 The table below provides an overview of the materials and components required for this project. The primary component is the EduExo Lite kit, which already includes several sensors and other essential components. Where possible, a link to the exact component has been included, or alternatively, to a suitable substitute when the exact component could not be identified online. Some prices listed in the table were converted from foreign currencies to euros using the exchange rates applicable at the beginning of May 2026. Figure 6 presents all components included in the EduExo Lite kit.
 
 <img width="759" height="544" alt="image" src="https://github.com/user-attachments/assets/20c3b90b-7534-4180-bff5-db5af7710528" />
+
 Figure 6: Overview of components in the EduExo Lite kit [10]
+
+
 
 
 | Component | Purpose | Qty | Estimated Price | Link to component |
