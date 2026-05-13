@@ -18,10 +18,8 @@ The table below provides an overview of the materials and components required fo
   <img width="759" height="544"
   src="https://github.com/user-attachments/assets/20c3b90b-7534-4180-bff5-db5af7710528" />
 
-  <figcaption style="margin-top: 10px; text-align: center;">
-    <b>Figure 6:</b> Overview of components included in the EduExo Lite kit [10]
-  </figcaption>
-</figure>
+ <b>Figure 6:</b> Overview of components included in the EduExo Lite kit [10]
+
 
 <br><br>
 <br><br>
