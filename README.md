@@ -117,8 +117,22 @@ The table below provides an overview of the materials and components required fo
 
 ## Methods  
 
-Word sectie wordt hier geplakt. 
+### Conceptual framework
+This section discusses the selection of the different components and how they are intended to work together.
 
+The basic concept operates by using two IMUs (MPU6050) to measure the acceleration and position of both the forearm and upper arm. One IMU is positioned on the outer side of the forearm, while the second IMU is attached to the outer side of the upper arm. These measurements can then be compared with each other. In combination with the data obtained from the muscle sensor, which detects involuntary muscle contractions, the system can estimate the severity of the tremor, including its amplitude and frequency. Based on these measurements, the software controls the servo motor, which is responsible for suppressing the detected tremor.
+
+In addition, a potentiometer is connected to the system. This allows the user to adjust the level of tremor suppression, ranging from stronger suppression to temporarily disabling the system. The Drake haptic actuator provides haptic feedback to indicate events such as system start-up or the currently selected operating mode of the arm. The actuator is intended to be sewn onto the nylon sock so that, when the sock is worn, the haptic vibrations can be effectively transferred to the user. The exact position depends on how the actuator is sewn onto the sock, but the intended placement is on the forearm near the wrist. The actuator is controlled through the DRV2605L driver, which enables different haptic effects to be communicated to the user.
+
+All components are connected using jumper wires and are neatly routed towards the central Arduino Nano with the aid of glue. Where necessary, multiple wires were soldered together into a single connection to allow easier integration with the Arduino Nano. A complete wiring diagram showing all connections to the Arduino Nano can be found in the Technical Docs folder. Additional documentation regarding the connection ports of the EMG muscle sensor, the IMU (MPU6050), the haptic actuator driver (DRV2605L), and the input/output pins of the Arduino Nano can also be found in this folder.
+
+The entire system can be powered using a 9 V battery positioned next to the Arduino Nano on the inside of the upper arm section of the exoskeleton. In practice, however, the arm is often powered directly through a laptop during development. This allows code to be tested more easily and enables live data streaming without requiring a Bluetooth module. Furthermore, the 9 V battery would discharge relatively quickly during prolonged standalone operation.
+
+### Practical building plan 
+
+### System architecture 
+
+### Troubleshooting/improvements
 
 
 ---
