@@ -20,26 +20,68 @@ Current solutions can generally be divided into four main categories. The first 
 
 #### Robotic exoskeletons 
 The fundamental principle of robotic exoskeletons is biomechanical loading. By applying controlled forces or additional inertia to a limb, tremorous motion can be attenuated. The application developed in this project using the Edu Exo kit also falls within this category. Robotic exoskeletons are often considered one of the most effective approaches for tremor reduction, as they can provide direct and active mechanical suppression of unwanted oscillations. However, a major drawback of these systems is that they are often relatively bulky, noisy, and uncomfortable to wear for extended periods. This limits their suitability for continuous use in everyday life [5].
+
 One of the earliest applications in this category is WOTAS (Wearable Orthosis for Tremor Assessment and Suppression), a wearable upper-limb exoskeleton designed to measure and suppress tremor by applying mechanical forces to the arm. The system was developed as a non-grounded tremor suppression platform, meaning that no external fixed support structure is required. WOTAS follows the kinematic structure of the human arm and supports multiple degrees of freedom, including elbow flexion-extension, forearm pronation-supination and wrist flexion-extension [6].
+
 The exoskeleton is equipped with several sensors, primarily MEMS gyroscopes, to measure tremor characteristics such as frequency and amplitude. In addition, force sensors based on strain gauges are integrated to monitor the interaction forces between the user and the orthosis. Actuation is achieved using compact brushless DC motors combined with harmonic drive transmissions [6].
+
 To suppress tremor, WOTAS biomechanically modifies the motion of the arm through strategies such as impedance control and notch filtering. The control system first separates voluntary movement from tremorous motion and subsequently estimates tremor frequency and amplitude in real time. In this way, the device can selectively counteract tremor while preserving intentional movement as much as possible [6]. Figure 1 shows an overview of the WOTAS exoskeleton.
 
 <img width="498" height="480" alt="image" src="https://github.com/user-attachments/assets/152af769-cf90-4a6a-853e-53510e5cb611" />
-<b>Figure 1:</b> An overview of the WOTOS exoskeleton [6]
+
+  <b>Figure 1:</b> An overview of the WOTOS exoskeleton [6]
 
 <br><br>
 #### Soft robotic exoskeletons
 Soft actuators are compliant actuators composed of flexible materials such as elastomers or silicone, allowing improved conformity to the human body and increased wearing comfort. Similar to other systems within this category, they suppress tremor by generating opposing forces or locally increasing stiffness, while preserving voluntary movement as much as possible. Their main advantage is the potential for more discrete and wearable designs compared to rigid exoskeletons, although their tremor suppression effectiveness is generally lower [5].
+
 An example of a soft actuator-based system is the wearable tremor suppression glove (WTSG) [7]. The device operates through a mechanically cable-driven system that suppresses tremor in the fingers and wrist. Inertial measurement units (IMUs) continuously monitor hand motion and distinguish voluntary movement from tremor using a tremor estimation algorithm. Subsequently, brushless DC (BLDC) motors actuate flexible non-stretchable cables that apply pulling forces to the finger and wrist joints. In this way, tremor is mechanically damped while voluntary movement is largely preserved. The system therefore combines active motion sensing with cable-based mechanical suppression in a compact wearable glove design [7]. Figure 2 shows the WTSG prototype worn on the hand.
 
 <img width="410" height="442" alt="image" src="https://github.com/user-attachments/assets/f2c95a0d-3c0b-4e58-9170-3ff1b55b877d" />
-<b>Figure 2:</b> WTSG prototype on hand [7]
+
+  <b>Figure 2:</b> WTSG prototype on hand [7]
 <br><br>
 
+#### Functional Electrical Stimulation (FES)
+Functional electrical stimulation (FES) uses electrical pulses to activate specific muscles in order to counteract tremor motion. Two principal strategies are commonly applied. The first is co-contraction, in which antagonist muscles are simultaneously activated to increase joint impedance. The second is out-of-phase stimulation, where the antagonist of the tremor-producing muscle is stimulated to generate an opposing force [5].
 
+The main advantages of FES are its aesthetic benefits, as the systems can be designed to be significantly smaller and more discreet than mechanical alternatives. However, the technique requires highly accurate real-time synchronisation, as delays in stimulation can significantly reduce its effectiveness [5].
 
+A portable functional electrical stimulation device for knee osteoarthritis is an example of motion modification using this technique. The system employs a pressure sensor placed under the heel to detect the early stance phase during walking. At this moment, electrical stimulation is applied to the quadriceps muscles to induce eccentric contraction, thereby increasing knee flexion and improving shock absorption during gait. Consequently, mechanical loading on the knee joint is reduced while normal walking motion is largely preserved [8]. Figure 3 illustrates the concept used in this experimental setup.
 
- Word document into wordt hier geplakt. 
+<img width="671" height="399" alt="image" src="https://github.com/user-attachments/assets/552a59d5-82f7-40cb-9543-27aac5d4f906" />
+
+ <b>Figure 3:</b> Experimental setup for FES device [8] 
+<br><br>
+#### Afferent neurostimulation
+The latest main technique is based on afferent neurostimulation. Afferent neurostimulation is a tremor suppression approach that does not directly act on the muscles, but instead stimulates sensory nerve pathways to modulate central nervous system activity. The underlying idea is that afferent input influences tremor-related neural circuits in the brain and spinal cord, leading to a corrective motor response that can reduce oscillatory activity [5].
+
+Overall, the effect is based on neural modulation rather than direct mechanical opposition, as in exoskeleton-based systems. While studies report promising results, the effectiveness is variable across patients and generally less consistent than some other wearable tremor suppression approaches [5].
+
+An example of a device that uses afferent neurostimulation is a wireless wearable tremor modulation system designed for the suppression of upper-limb kinetic tremor. The system continuously records wrist motion using a three-axis accelerometer to detect tremor in real time and delivers electrical stimulation to branches of the radial nerve via surface electrodes placed at the wrist. This peripheral stimulation provides afferent sensory input that modulates central tremor-generating networks, resulting in a reduction of tremor amplitude and power during functional movements [9].
+
+The device is designed as a compact, wrist-worn system and can be compared to wearing a wristwatch in terms of placement and general form factor. Stimulation is applied in either a continuous open-loop mode or a phase-locked closed-loop mode, depending on the detected tremor dynamics. By combining real-time motion sensing with feedback-based neuromodulation, the system aims to attenuate tremor while preserving voluntary movement [9].
+Figure 4 shows a schematic representation of the device and its operating principle.
+
+<img width="725" height="324" alt="image" src="https://github.com/user-attachments/assets/8d12dca3-ba58-47e3-b10e-c49e71a1a7dd" />
+
+  <b>Figure 4:</b> Schematic representation of the working principle of the wrist device [9]
+<br><br>
+
+Finally, Figure 5 provides a schematic overview of the four main categories of wearable devices for tremor suppression.
+
+<img width="675" height="516" alt="image" src="https://github.com/user-attachments/assets/7f2760d0-f607-488d-89f2-f901ec4c3ecc" />
+
+  <b>Figure 5:</b> Schematic overview of the four major categories of wearable devices for tremor suppression [9]
+<br><br>
+
+### Knowledge gaps/limitations
+Although the discussed approaches demonstrate promising results in tremor suppression, several important limitations remain. Robotic exoskeletons, while effective, are often too bulky and uncomfortable for prolonged daily use [5]. Soft robotic alternatives improve wearability but generally achieve lower suppression performance [5]. FES-based systems require precise timing and are sensitive to delays, limiting their robustness in real-world conditions [5]. Afferent neurostimulation shows variable effectiveness across patients and lacks the consistency needed for reliable tremor management [5]. 
+
+A common limitation across all these categories is the complexity of separating voluntary movement from tremorous motion in real time, which remains an open challenge. Furthermore, most existing systems are designed as standalone suppression devices and do not leverage haptic feedback as a means of enhancing user awareness or improving motor control. The integration of haptic technology could offer a complementary advantage by providing the user with real-time sensory cues, potentially improving voluntary movement accuracy alongside mechanical suppression. 
+
+The present project aims to address this gap by exploring tremor suppression through the Edu Exo robotic exoskeleton platform, with a focus on accessibility and ease of use for the end user. The next section provides an overview of the materials required to realise this project.
+
 ---
 ## Supplies (Bill of Materials)
 
