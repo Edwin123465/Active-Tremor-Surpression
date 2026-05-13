@@ -4,7 +4,8 @@
 **Course:** Haptic Interfaces Experience – KU Leuven  
 **Professor:** Carlos Rodriguez-Guerrero  
 ## Description
-see later
+This project describes the design of a tremor suppression arm using the EduExo Lite kit in combination with additional components. The project was carried out as part of a coursework assignment for the Haptic Interfaces course at KU Leuven.
+
 ---
 
 ## Introduction  
