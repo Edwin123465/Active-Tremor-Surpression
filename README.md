@@ -251,7 +251,7 @@ https://youtu.be/2Iga29aqnwY
 ---
 
 ## Repository Structure  
-### README Structure
+#### README Structure
 - Description
 - Introduction
   - Existing solutions
@@ -269,7 +269,7 @@ https://youtu.be/2Iga29aqnwY
 - References
 - Demo Video
 - Repository Structure
-### Document Structure 
+#### Documents Structure 
 - Technical docs
 - Firmware
 - Execute files
