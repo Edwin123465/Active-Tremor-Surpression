@@ -240,25 +240,40 @@ Word sectie wordt hier geplakt.
 ## References  
 
 [1]	K. P. Bhatia et al., ‘Consensus Statement on the classification of tremors. from the task force on tremor of the International Parkinson and Movement Disorder Society’, Movement Disorders, vol. 33, no. 1, pp. 75–87, 2018, doi: 10.1002/mds.27121.
+
 [2]	E. D. Louis, R. Ottman, and W. Allen Hauser, ‘How common is the most common adult movement disorder? Estimates of the prevalence of essential tremor throughout the world’, Movement Disorders, vol. 13, no. 1, pp. 5–10, 1998, doi: 10.1002/mds.870130105.
+
 [3]	G. Deuschl, J. Raethjen, M. Lindemann, and P. Krack, ‘The pathophysiology of tremor’, Muscle & Nerve, vol. 24, no. 6, pp. 716–735, 2001, doi: 10.1002/mus.1063.
+
 [4]	A. Tarakad and J. Jankovic, ‘Essential Tremor and Parkinson’s Disease: Exploring the Relationship’, Tremor and Other Hyperkinetic Movements, vol. 8, no. 0, Jan. 2019, doi: 10.5334/tohm.441.
+
 [5]	J. S. Lora-Millan, G. Delgado-Oleas, J. Benito-León, and E. Rocon, ‘A Review on Wearable Technologies for Tremor Suppression’, Front. Neurol., vol. 12, Aug. 2021, doi: 10.3389/fneur.2021.700600.
+
 [6]	E. Rocon, J. M. Belda-Lois, A. F. Ruiz, M. Manto, J. C. Moreno, and J. L. Pons, ‘Design and Validation of a Rehabilitation Robotic Exoskeleton for Tremor Assessment and Suppression’, IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 15, no. 3, pp. 367–378, Sep. 2007, doi: 10.1109/TNSRE.2007.903917.
+
 [7]	Y. Zhou, M. E. Jenkins, M. D. Naish, and A. L. Trejos, ‘Development of a Wearable Tremor Suppression Glove’, in 2018 7th IEEE International Conference on Biomedical Robotics and Biomechatronics (Biorob), Aug. 2018, pp. 640–645. doi: 10.1109/BIOROB.2018.8487197.
+
 [8]	S. Doi, S. Shibata, S. Mu, and Y. Miki, ‘A Portable Functional Electrical Stimulation Device for Walking Motion Modification’, in 2020 IEEE 9th Global Conference on Consumer Electronics (GCCE), Oct. 2020, pp. 260–264. doi: 10.1109/GCCE50665.2020.9291832.
+
 [9]	J. Kim, T. Wichmann, O. T. Inan, and S. P. Deweerth, ‘A Wearable System for Attenuating Essential Tremor Based on Peripheral Nerve Stimulation’, IEEE Journal of Translational Engineering in Health and Medicine, vol. 8, pp. 1–11, 2020, doi: 10.1109/JTEHM.2020.2985058.
+
 [10]	‘Exoskeleton | EduExo 2.0’, Auxivo. Accessed: May 13, 2026. [Online]. Available: https://www.auxivo.com/product-page/eduexo-2-0
+
 [11]	A. Industries, ‘Adafruit MPU-6050 6-DoF Accel and Gyro Sensor - STEMMA QT Qwiic’. Accessed: May 13, 2026. [Online]. Available: https://www.adafruit.com/product/3886
+
 [12]	‘DRAKE High Definition Haptic Motor Technology’, TITAN Haptics. Accessed: May 13, 2026. [Online]. Available: https://titanhaptics.com/drake/
+
 [13]	A. Industries, ‘Adafruit DRV2605L Haptic Motor Controller - STEMMA QT / Qwiic’. Accessed: May 13, 2026. [Online]. Available: https://www.adafruit.com/product/2305
+
 [14]	‘Harley Benton Parts Potentiometer A500KOhm’, Musikhaus Thomann. Accessed: May 13, 2026. [Online]. Available: https://www.thomann.de/be/partsland_potentiometer_500kohm.htm
+
 [15]	‘Blok Batterij - Aantal: 1 batterij IEC code: 6LR61, 6LF22 Spanning: 9 Volt Merk: Varta’. Accessed: May 13, 2026. [Online]. Available: https://www.allekabels.be/blok-batterij/7289/4312202/blok-batterij.html?mc=nl-be&gad_source=1&gad_campaignid=23479248706&gbraid=0AAAAAC3CB_rgQAV2zU2rVRTE3K8SKBEqG&gclid=CjwKCAjwwpDQBhAuEiwAa-4Wo4TpIeBrQ4a2ih623bKzOIkZIikmVmuOSdvz-aix1Xb8y_eaSNV_3RoCi9UQAvD_BwE
+
 [16]	‘123-3D.nl - 3D-printers | kits | parts | filament’, 123-3D.nl. Accessed: May 13, 2026. [Online]. Available: https://www.123-3d.nl
+
 [17]	‘123-3D.nl - 3D-printers | kits | parts | filament’, 123-3D.nl. Accessed: May 13, 2026. [Online]. Available: https://www.123-3d.nl
+
 [18]	‘Nature kabelbinders nylon 15cm 25 stuks’. Accessed: May 28, 2026. [Online]. Available: https://www.brico.be/nl/tuin-terras-buitenleven/moestuinen-serres/moestuin-accessoires-benodigdheden/bindmaterialen/nature-kabelbinders-nylon-15cm-25-stuks/5309665
-
-
 
 ---
 
