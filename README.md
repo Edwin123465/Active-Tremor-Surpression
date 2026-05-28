@@ -120,20 +120,97 @@ The table below provides an overview of the materials and components required fo
 ### Conceptual framework
 This section discusses the selection of the different components and how they are intended to work together.
 
-The basic concept operates by using two IMUs (MPU6050) to measure the acceleration and position of both the forearm and upper arm. One IMU is positioned on the outer side of the forearm, while the second IMU is attached to the outer side of the upper arm. These measurements can then be compared with each other. In combination with the data obtained from the muscle sensor, which detects involuntary muscle contractions, the system can estimate the severity of the tremor, including its amplitude and frequency. Based on these measurements, the software controls the servo motor, which is responsible for suppressing the detected tremor.
+The basic concept operates by using two IMUs (MPU6050) to measure the acceleration and position of both the forearm and upper arm of the right arm. One IMU is positioned on the outer side of the forearm, while the second IMU is attached to the outer side of the upper arm. These measurements can then be compared with each other. In combination with the data obtained from the muscle sensor, which detects involuntary muscle contractions, the system can estimate the severity of the tremor, including its amplitude and frequency. Based on these measurements, the software controls the servo motor, which is responsible for suppressing the detected tremor.
 
-In addition, a potentiometer is connected to the system. This allows the user to adjust the level of tremor suppression, ranging from stronger suppression to temporarily disabling the system. The Drake haptic actuator provides haptic feedback to indicate events such as system start-up or the currently selected operating mode of the arm. The actuator is intended to be sewn onto the nylon sock so that, when the sock is worn, the haptic vibrations can be effectively transferred to the user. The exact position depends on how the actuator is sewn onto the sock, but the intended placement is on the forearm near the wrist. The actuator is controlled through the DRV2605L driver, which enables different haptic effects to be communicated to the user.
+The potentiometer serves a dual role. When turned past approximately 55% of its travel, it triggers SUPPRESS mode; when turned below 45%, it exits SUPPRESS mode. A dead-band between these thresholds prevents oscillation near the midpoint. Within the upper half of the potentiometer range, the ADC value is mapped to a gain between 0.0 and 1.0 that controls the strength of the position-hold force applied during tremor detection. 
+
+The Drake haptic actuator provides haptic feedback to indicate events such as system start-up or the currently selected operating mode of the arm. The actuator is intended to be sewn onto the nylon sock so that, when the sock is worn, the haptic vibrations can be effectively transferred to the user. The exact position depends on how the actuator is sewn onto the sock, but the intended placement is on the forearm near the wrist. The actuator is controlled through the DRV2605L driver, which enables different haptic effects to be communicated to the user.
+
+The DRV2605L haptic driver is initialised at startup. Regretfully, the startup click effect was disabled during development after it was found that the inrush current from the strong-click waveform caused a voltage drop on the shared 5V rail sufficient to trigger the ATmega328P brownout detector, resulting in an infinite reset loop. A decoupling capacitor of 470–1000 µF across the motor supply would be required before re-enabling this feature.
+
 
 All components are connected using jumper wires and are neatly routed towards the central Arduino Nano with the aid of glue. Where necessary, multiple wires were soldered together into a single connection to allow easier integration with the Arduino Nano. A complete [wiring diagram](Technical%20docs/Wiring_Overview.pdf) showing all connections to the Arduino Nano can be found in the Technical Docs folder. Additional documentation regarding the connection ports of the [EMG muscle sensor](Technical%20docs/MyowareUserManualAT_04_001(muscle_sensor).pdf), the [IMU (MPU6050)](Technical%20docs/mpu6050-6-dof-accelerometer-and-gyro.pdf), the [haptic actuator driver (DRV2605L)](Technical%20docs/adafruit-drv2605-haptic-controller-breakout.pdf), and the [input/output pins of the Arduino Nano](Technical%20docs/ArduinoNanoConnections.jpeg) can also be found in this folder.
 
-The entire system can be powered using a 9 V battery positioned next to the Arduino Nano on the inside of the upper arm section of the exoskeleton. In practice, however, the arm is often powered directly through a laptop during development. This allows code to be tested more easily and enables live data streaming without requiring a Bluetooth module. Furthermore, the 9 V battery would discharge relatively quickly during prolonged standalone operation.
+The entire system can be powered using a 9 V battery positioned next to the Arduino Nano on the inside of the upper arm section of the exoskeleton. In practice, however, the arm is often powered directly through a laptop during development. This would allow the arm to work as an individual system. But, because of the many sensors connected to the microcontroller, the 9 V battery would discharge relatively quickly during prolonged standalone operation.
 
 ### Practical building plan 
+A step-by-step assembly guide is provided together with the EduExo kit, which assisted in constructing the arm. The manual also includes instructions for wiring the sensors and motor components. In this project, however, the threaded inserts for the screws were heat-inserted using a soldering iron instead of being screwed into place, as this resulted in a more secure and reliable fit.
+
+Furthermore, the sensors were mounted on the exterior of the arm using adhesive. The wires were carefully bundled together with zip ties and glued along the structure towards the sensors to improve cable management. The potentiometer was attached to the side of the arm in an ergonomic position to allow comfortable operation. Finally, the Drake haptic actuator was sewn onto the sleeve using needle and thread. Figure 7 illustrates the different components integrated into the arm.
+
+<img width="883" height="683" alt="image" src="https://github.com/user-attachments/assets/57e5ac80-b853-419f-8558-0fc599bd737c" />
+
+<b>Figure 7:</b> Different components used: IMU 1 (a), Driver (DRV2605L) (b), haptic actuator (c), servomotor (d), potentiometer (e), IMU 2 (f), EMG sensor (g)
+<br><br>
+
+With the exoskeleton arm supports attached, the final assembly of the arm is shown in Figure 8.
+
+<img width="580" height="521" alt="image" src="https://github.com/user-attachments/assets/79ed286d-dd18-4903-9b5a-24c29cb95e49" />
+
+<b>Figure 8:</b> Exoskeleton with arm supports
+<br><br>
 
 ### System architecture 
+The system operates as five sequential functional layers running at 100 Hz. Figure 9 provides a schematic overview.
+
+<img width="940" height="470" alt="image" src="https://github.com/user-attachments/assets/40127e58-64e7-47ee-aaf4-2e178d1f481d" />
+
+<b>Figure 9:</b> System architecture
+<br><br>
+
+The sensing layer reads both MPU-6050 IMUs over I²C, the MyoWare EMG signal on A1, the potentiometer on A0, and the servo feedback on A3 at the start of each 10 ms cycle.
+
+The filtering layer subtracts the bias-corrected upper-arm gyroscope from the forearm gyroscope to produce a differential signal with common-mode rejection. The L1 norm of this vector passes through a second-order Butterworth bandpass filter (2–8 Hz), a full-wave rectifier, and a 50 ms IIR envelope follower, yielding a scalar tremor amplitude in deg/s.
+
+The classification layer compares smoothed EMG and tremor amplitude against two EEPROM-stored thresholds. Voluntary contraction (high EMG) takes priority and always prevents suppression. If tremor amplitude exceeds its threshold while EMG is low, the classifier outputs state 2 (tremor). Otherwise state 0 (rest) is assigned.
+
+The actuation layer uses a position-hold strategy. The servo detaches completely during rest and voluntary movement, leaving the arm free. On tremor onset, it attaches at the arm's current position and holds it with gain-weighted force. After tremor stops, it remains attached for 400 ms to avoid rapid cycling, then detaches.
+
+The feedback layer assigns distinct DRV2605L haptic effects to system events, like suppression engagement, fault, and gain saturation,  through the Drake actuator on the forearm sock.
+
+All data is streamed at 115200 baud over a fixed ASCII CSV protocol to a Python dashboard that displays live plots of tremor amplitude, EMG, gyroscope signals, and servo angle.
+
+### Firmware implementation
+The firmware is split into independent modules: filter.cpp (Butterworth bandpass and envelope follower), calib.cpp (EEPROM calibration struct), state.cpp (FSM transitions), control.cpp (servo position-hold logic), and firmware.ino (main loop, command parser, telemetry).
+
+Timing uses micros() scheduling with a fixed 10,000 µs increment, avoiding the cumulative drift of delay-based approaches. Worst-case cycle time on the ATmega328P is approximately 3–4 ms, well within the 10 ms budget.
+
+Two AVR constraints shaped the implementation directly. AVR snprintf does not support %f, so all floats are transmitted as scaled integers (e.g. 12.34 deg/s becomes 12,34 via %u.%02u). The sqrtf() function was found to cause stack overflow on the 2 KB RAM device, so the L1 norm replaces Euclidean magnitude throughout. All buffers are statically allocated and no dynamic memory is used.
+
+Calibration data (36 bytes) is stored in EEPROM from address 0, validated by a magic number sentinel (0xCAB1). If absent on boot, safe defaults load automatically. The serial protocol uses three prefix types: T for 100 Hz telemetry, E for events and state transitions, and C for commands from the dashboard. The full specification is in shared/PROTOCOL.md.
+
+### Calibration procedure
+
+Before first use, a one-time calibration captures individual sensor baselines and servo range. Pressing C in the dashboard sends C,CALIB_START. The user holds the arm still for three seconds while the firmware averages 300 samples of gyroscope and EMG data to compute bias values. The user then moves through their full range of motion, allowing the firmware to record the servo feedback limits. Pressing S sends C,CALIB_SAVE, committing all values to EEPROM. On subsequent boots, calibration loads automatically.
 
 ### Troubleshooting/improvements
 
+Several issues were encountered and resolved during development, documented here for reproducibility.
+Firmware upload failed initially because the Arduino IDE was configured for the jtag2updi programmer, which targets newer AVR devices. Switching the board profile from Arduino Nano Every to Arduino Nano resolved this.
+
+The Zadig USB driver utility was used experimentally, which replaced the CDC serial driver with WinUSB and caused the COM port to disappear. Recovery required uninstalling the device in Device Manager and reconnecting the Arduino to restore the original driver.
+
+After closing the Arduino IDE, a background arduino-cli.exe process retained the COM port, blocking the Python dashboard. The fix was to fully terminate the IDE process tree before launching the dashboard.
+
+The sqrtf() function caused a stack overflow on the 2 KB ATmega328P due to AVR floating-point library overhead. Replacing it with the L1 norm eliminated the crash and reduced flash usage with no meaningful loss of detection accuracy.
+
+The EMG signal initially saturated near the ADC maximum (>900/1023) due to suboptimal electrode placement. By repositioning the electrodes on the belly of the flexor carpi radialis muscle and improving skin contact, the baseline signal was reduced to approximately 50–100 ADC counts, while still providing clear peaks during voluntary muscle contraction.
+
+In addition, simulating a tremor without unintentionally activating the muscle sensor proved to be challenging in subjects without an actual tremor. As a result, the EMG measurements during active tremor suppression can sometimes contain distorted or less representative values.
+
+#### Hardware limitations 
+Due to the large number of hardware components that need to be powered, the 9V battery drains quickly. Therefore, during this development phase, the arm is continuously powered through a cable connected directly to the laptop. In addition, this cable is required for reading sensor data. In a more advanced version, this limitation could be addressed by implementing a dedicated battery pack together with a Bluetooth module for wireless data streaming.
+
+Furthermore, the large number of wires connected to the different components occasionally caused wiring issues. In many cases, cables had to be soldered together before being connected to the Arduino through a single wire. As a result, the interior of the arm contains a dense and difficult-to-organize wiring setup. Future iterations could therefore focus on improving the efficiency and organization of the wiring system. Figure 8 shows the wiring inside the arm. 
+
+<img width="331" height="442" alt="image" src="https://github.com/user-attachments/assets/983853d7-0a70-4755-96cb-1e75ba35fe4a" />
+
+<b>Figure 10:</b> Complex wiring inside the arm
+<br><br>
+
+Since the EduExo kit is a robotic exoskeleton, it also inherits several disadvantages discussed in the introduction, such as being relatively bulky and uncomfortable to wear for extended periods of time. A more refined end product could attempt to minimize these limitations by reducing the overall weight of the system, for example.
+
+Finally, the servomotor included in the EduExo kit is currently too limited to provide fully active tremor suppression during large tremors while the arm is moving. In this development phase, tremor suppression is therefore mainly demonstrated during stationary arm positions. As such, the current implementation should be considered primarily as a proof of concept to measure tremors and demonstrate that suppression can occur, or could be further improved with the use of a more powerful motor.
 
 ---
 
