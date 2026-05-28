@@ -1,6 +1,6 @@
 # Active Tremor Suppression  
 
-**Authors:** Samu Boving & Edwin Arnalsteen  
+**Authors:** Edwin Arnalsteen & Samu Boving
 **Course:** Haptic Interfaces Experience – KU Leuven  
 **Professor:** Carlos Rodriguez-Guerrero  
 ## Description
