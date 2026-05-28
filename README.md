@@ -251,3 +251,26 @@ https://youtu.be/2Iga29aqnwY
 ---
 
 ## Repository Structure  
+### README Structure
+- Description
+- Introduction
+  - Existing solutions
+  - Knowledge gaps & limitations
+- Supplies (Bill of Materials)
+- Methods
+  - Conceptual framework
+  - Practical building plan
+  - System architecture
+  - Firmware implementation
+  - Calibration procedure
+  - Troubleshooting & improvements
+- Results & Discussion
+- Conclusion & Future Work
+- References
+- Demo Video
+- Repository Structure
+### Document Structure 
+- Technical docs
+- Firmware
+- Execute files
+- README
