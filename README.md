@@ -304,8 +304,31 @@ https://youtu.be/2Iga29aqnwY
 - References
 - Demo Video
 - Repository Structure
+- Attachments
 #### Documents Structure 
 - Technical docs
 - Firmware
 - Execute files
 - README
+
+## Attachments 
+Attachment 1: timeseries plots
+
+‘Book’ – Reading movements
+
+<img width="458" height="247" alt="image" src="https://github.com/user-attachments/assets/c5af174c-d595-4527-9354-49bb38dfbe61" />
+
+<img width="461" height="249" alt="image" src="https://github.com/user-attachments/assets/0401f9f4-527e-4415-b576-f4435af26078" />
+
+“Waving”– Waving movements
+
+<img width="457" height="249" alt="image" src="https://github.com/user-attachments/assets/c1574657-f5d4-4213-bf04-63d56ebbedb8" />
+
+<img width="455" height="248" alt="image" src="https://github.com/user-attachments/assets/76021918-19b1-4bc1-b360-36a0355bbcaf" />
+
+
+
+
+
+
+
