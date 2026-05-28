@@ -201,7 +201,7 @@ In addition, simulating a tremor without unintentionally activating the muscle s
 #### Hardware limitations 
 Due to the large number of hardware components that need to be powered, the 9V battery drains quickly. Therefore, during this development phase, the arm is continuously powered through a cable connected directly to the laptop. In addition, this cable is required for reading sensor data. In a more advanced version, this limitation could be addressed by implementing a dedicated battery pack together with a Bluetooth module for wireless data streaming.
 
-Furthermore, the large number of wires connected to the different components occasionally caused wiring issues. In many cases, cables had to be soldered together before being connected to the Arduino through a single wire. As a result, the interior of the arm contains a dense and difficult-to-organize wiring setup. Future iterations could therefore focus on improving the efficiency and organization of the wiring system. Figure 8 shows the wiring inside the arm. 
+Furthermore, the large number of wires connected to the different components occasionally caused wiring issues. In many cases, cables had to be soldered together before being connected to the Arduino through a single wire. As a result, the interior of the arm contains a dense and difficult-to-organize wiring setup. Future iterations could therefore focus on improving the efficiency and organization of the wiring system. Figure 10 shows the wiring inside the arm. 
 
 <img width="331" height="442" alt="image" src="https://github.com/user-attachments/assets/983853d7-0a70-4755-96cb-1e75ba35fe4a" />
 
