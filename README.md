@@ -32,7 +32,7 @@ To suppress tremor, WOTAS biomechanically modifies the motion of the arm through
 
 <img width="498" height="480" alt="image" src="https://github.com/user-attachments/assets/152af769-cf90-4a6a-853e-53510e5cb611" />
 
-  <b>Figure 1:</b> An overview of the WOTOS exoskeleton [6]
+  <b>Figure 1:</b> An overview of the WOTAS exoskeleton [6]
 
 <br><br>
 #### Soft robotic exoskeletons
@@ -180,7 +180,7 @@ Two AVR constraints shaped the implementation directly. AVR snprintf does not su
 
 Calibration data (36 bytes) is stored in EEPROM from address 0, validated by a magic number sentinel (0xCAB1). If absent on boot, safe defaults load automatically. The serial protocol uses three prefix types: T for 100 Hz telemetry, E for events and state transitions, and C for commands from the dashboard. The full specification is in [protocol.h](Firmware/protocol.h).
 
-Al the firmware codes needed can be found in the [Firmware code map](Firmware). The files needed to actually run the tremor suppression code can be found in the [Execute dashboard map](Execute%20dashboard).
+All firmware codes needed can be found in the [Firmware code map](Firmware). The files needed to actually run the tremor suppression code can be found in the [Execute dashboard map](Execute%20dashboard).
 
 ### Calibration procedure
 
@@ -204,7 +204,7 @@ In addition, simulating a tremor without unintentionally activating the muscle s
 #### Hardware limitations 
 Due to the large number of hardware components that need to be powered, the 9V battery drains quickly. Therefore, during this development phase, the arm is continuously powered through a cable connected directly to the laptop. In addition, this cable is required for reading sensor data. In a more advanced version, this limitation could be addressed by implementing a dedicated battery pack together with a Bluetooth module for wireless data streaming.
 
-Furthermore, the large number of wires connected to the different components occasionally caused wiring issues. In many cases, cables had to be soldered together before being connected to the Arduino through a single wire. As a result, the interior of the arm contains a dense and difficult-to-organize wiring setup. Future iterations could therefore focus on improving the efficiency and organization of the wiring system. Figure 10 shows the wiring inside the arm. 
+Furthermore, the large number of wires connected to the different components occasionally caused wiring issues. In many cases, cables had to be soldered together before being connected to the Arduino through a single wire. As a result, the interior of the arm contains a dense and difficult-to-organise wiring setup. Future iterations could therefore focus on improving the efficiency and organization of the wiring system. Figure 10 shows the wiring inside the arm. 
 
 <img width="331" height="442" alt="image" src="https://github.com/user-attachments/assets/983853d7-0a70-4755-96cb-1e75ba35fe4a" />
 
