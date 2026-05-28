@@ -219,23 +219,41 @@ Finally, the servomotor included in the EduExo kit is currently too limited to p
 
 ## Results & Discussion  
 
-Word sectie wordt hier geplakt. 
+### Test analysis
+Two structured test sessions were recorded per subject following an identical 10 s rest / 10 s voluntary movement / 10 s simulated tremor protocol. The voluntary movement conditions differed: in the “Book” test, subjects turned pages of a book, a fine motor task producing low forearm angular velocity, while in the “Waving” test, subjects waved their arm broadly, producing large forearm rotations.
+During the rest phase, the 2–8 Hz bandpass tremor amplitude remained near 0 deg/s in all four sessions, with stable REST classification and no servo engagement. This confirms the filter baseline is stable and the threshold is not producing false positives at rest.
 
-Key observations:  
-- Effective reduction of tremor amplitude at specific frequencies  
-- Improved user comfort compared to electrical stimulation  
-- Sensitivity tuning is essential for optimal performance  
+The two movement conditions from  Figure 11 and Figure 12 showed a clear difference in classifier behaviour. During page-turning, the forearm gyroscope signal and EMG stayed relatively low, and the classifier predominantly remained in VOLUNTARY or REST. During arm waving, the raw forearm gyro reached much higher amplitudes, and EMG rose substantially, yet the classifier still correctly identified VOLUNTARY in the majority of frames, though occasional transient TREMOR classifications were observed. This is an expected limitation when gross voluntary movement overlaps with the tremor frequency band.
 
-Limitations:  
-- Limited torque output of the stepper motor  
-- Latency in signal processing  
-- Mechanical alignment challenges  
+<img width="861" height="470" alt="image" src="https://github.com/user-attachments/assets/b9b5f73a-258e-436d-a819-8a3d7d17be4e" />
+
+<b>Figure 11:</b> Timeseries plot "Book" on Edwin
+<br><br>
+
+<img width="887" height="479" alt="image" src="https://github.com/user-attachments/assets/a8a81ef2-fc6d-4406-9d39-3b07a03beb09" />
+
+<b>Figure 12:</b> Timeseries plot “Waving” on Edwin
+<br><br>
+
+During the simulated tremor phase, bandpass amplitude rose sharply (40–100 deg/s), and TREMOR classification triggered across all four sessions, engaging the servo position-hold. This confirms the system responds specifically to rapid, rhythmic forearm shaking in the 2–8 Hz band.
+
+All figures are placed in the attachments for reference.
+
+### User experience 
+As anticipated, the motor proved insufficiently powerful, which limited the suppression mechanism to holding the arm in place rather than fully cancelling the tremor. Additionally, simulating tremor without a naturally occurring tremor, combined with the EMG sensor, introduced some difficulty in reliably distinguishing voluntary movement from tremor, occasionally causing voluntary motion to be incorrectly suppressed. The haptic actuator positioned just above the wrist was, however, experienced as a pleasant and intuitive feedback mechanism, providing brief and clear notifications indicating whether tremor was detected and whether suppression was active via the potentiometer.
+
+Overall, the design serves as a solid proof of concept, demonstrating how tremor can be measured and how multiple signals can be processed into a tremor suppression solution. With more capable hardware and more precise signal processing, a significantly more effective and reliable system could be achieved.
 
 ---
 
 ## Conclusion & Future Work  
 
-Word sectie wordt hier geplakt.
+This project produced a working tremor detection and response orthosis on a low-cost Arduino Nano platform. The system combines dual-IMU differential sensing, EMG-gated classification, a real-time 2–8 Hz Butterworth bandpass filter, and haptic state feedback. Detection performed reliably across both test conditions and both subjects, with the classifier correctly identifying simulated tremor in all sessions and maintaining near-zero amplitude during rest.
+
+Actuator bandwidth is the binding constraint for this approach. A hobby servo can operate within the tremor frequency band but cannot generate counter-forces fast and strong enough to oppose individual oscillation cycles. Achieving true active suppression would require a higher-bandwidth actuator such as a brushless DC motor. Further improvements include sensor fusion to reduce orientation drift, automatic bandpass tuning based on the user's measured tremor peak frequency, wireless communication to remove the USB tether currently required for dashboard operation, and an active real-time dashboard visualising arm movement to provide clearer insight into system behaviour during use.
+
+Overall, the project serves as a solid proof of concept, demonstrating that tremor detection and a basic mechanical response are achievable within tight cost and hardware constraints. It shows that multiple heterogeneous signals (inertial, electromyographic, and positional) can be integrated into a coherent tremor suppression pipeline on accessible hardware. Importantly, the path to a more capable system is not limited to actuator upgrades alone: more precise signal processing, improved sensor calibration, and higher-quality hardware across the board would each contribute meaningfully to a more effective and reliable solution. The project provides a documented foundation on which such a system can be built.
+
 
 ---
 
