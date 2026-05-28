@@ -326,9 +326,9 @@ https://youtu.be/2Iga29aqnwY
 - Repository Structure
 - Attachments
 #### Documents Structure 
-- Technical docs
+- Execute dashboard
 - Firmware
-- Execute files
+- Technical docs
 - README
 
 ## Attachments 
@@ -345,10 +345,3 @@ Attachment 1: timeseries plots
 <img width="457" height="249" alt="image" src="https://github.com/user-attachments/assets/c1574657-f5d4-4213-bf04-63d56ebbedb8" />
 
 <img width="455" height="248" alt="image" src="https://github.com/user-attachments/assets/76021918-19b1-4bc1-b360-36a0355bbcaf" />
-
-
-
-
-
-
-
