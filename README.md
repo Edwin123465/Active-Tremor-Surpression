@@ -178,7 +178,7 @@ Timing uses micros() scheduling with a fixed 10,000 µs increment, avoiding the 
 
 Two AVR constraints shaped the implementation directly. AVR snprintf does not support %f, so all floats are transmitted as scaled integers (e.g. 12.34 deg/s becomes 12,34 via %u.%02u). The sqrtf() function was found to cause stack overflow on the 2 KB RAM device, so the L1 norm replaces Euclidean magnitude throughout. All buffers are statically allocated and no dynamic memory is used.
 
-Calibration data (36 bytes) is stored in EEPROM from address 0, validated by a magic number sentinel (0xCAB1). If absent on boot, safe defaults load automatically. The serial protocol uses three prefix types: T for 100 Hz telemetry, E for events and state transitions, and C for commands from the dashboard. The full specification is in shared/PROTOCOL.md.
+Calibration data (36 bytes) is stored in EEPROM from address 0, validated by a magic number sentinel (0xCAB1). If absent on boot, safe defaults load automatically. The serial protocol uses three prefix types: T for 100 Hz telemetry, E for events and state transitions, and C for commands from the dashboard. The full specification is in [protocol.md](Firmware/protocol.md)
 
 ### Calibration procedure
 
