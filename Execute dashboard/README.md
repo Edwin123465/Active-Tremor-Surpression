@@ -62,6 +62,36 @@ python analysis.py --list                 # list all recorded sessions
 ```
 
 ---
+## Potentiometer behaviour
+
+The physical knob on the device controls suppression state and servo gain.
+Turning it from left to right passes through three zones:
+
+- **Left zone (0 – 45 % travel)**
+  Suppression is OFF. The servo is detached and the arm moves completely freely.
+  If suppression was active, turning into this zone releases it immediately.
+  *Haptic: single soft bump.*
+
+- **Middle zone / dead-band (45 – 55 % travel)**
+  No state change. Useful as a neutral resting position — the system stays in
+  whatever state it was already in, preventing accidental toggling.
+  *Haptic: single brief tick when crossing into this zone.*
+
+- **Right zone (55 – 100 % travel)**
+  Suppression is ON. The servo engages whenever tremor is detected and holds
+  the arm at its captured position. Turning further right increases the hold
+  gain (more resistance against tremor). At the zone threshold (~55 %) the
+  servo hold is at roughly half strength; at full right it is at maximum.
+  During rest or voluntary movement the servo stays detached regardless of
+  gain — it only engages on tremor onset.
+  *Haptic: double medium buzz.*
+
+- **After a tremor episode ends**
+  Once tremor stops, the servo remains attached for a short delay (~400 ms)
+  to avoid rapid cycling, then detaches automatically.
+  *Haptic: triple light pulse confirming the episode is complete.*
+
+---
 
 ## Folder layout
 
